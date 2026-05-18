@@ -526,6 +526,25 @@ function App() {
               <p className="mt-3 text-xs text-emerald-100">
                 Tap a selected goal above to remove it.
               </p>
+
+              <button
+                onClick={buildPlan}
+                className={`mt-4 w-full rounded-2xl px-5 py-3 font-bold sm:w-auto ${
+                  planCreated
+                    ? "bg-emerald-500 text-emerald-950"
+                    : "bg-white text-emerald-950"
+                }`}
+              >
+                {planCreated
+                  ? "Update my plan ✓"
+                  : `Build my plan with ${selectedGoals.length} goals`}
+              </button>
+
+              {planCreated && (
+                <p className="mt-3 rounded-2xl border border-emerald-400/30 bg-emerald-500/10 px-4 py-3 text-sm font-bold text-emerald-200">
+                  Your tracker is ready below. Click update if you changed your goals.
+                </p>
+              )}
             </div>
           )}
         </section>
